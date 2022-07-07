@@ -27,6 +27,8 @@ const Mentores = () => {
 
    return (
       <div className='container'>
+         <h1>Registrar Monitores</h1>
+
          <Form onSubmit={handleSubmit}>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
