@@ -4,6 +4,7 @@ import { Form, Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { agregarMonitoriasAsync } from '../redux/actions/actionAddMonitoria';
 import { listarMonitor } from '../redux/actions/actionData';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Monitorias = () => {
    const [mentor, setMentor] = useState([]);
@@ -28,13 +29,14 @@ const Monitorias = () => {
 
    const handleSubmit = (e) => {
       e.preventDefault()
-      console.log(pro)
+      toast.success("Monitoria agregada con exito");
       dispatch(agregarMonitoriasAsync(pro))
    }
 
    return (
       <div className='container'>
          <h1>Registrar Monitorias</h1>
+         <ToastContainer />
          <Form onSubmit={handleSubmit}>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">

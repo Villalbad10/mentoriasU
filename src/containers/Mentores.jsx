@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Form, Button } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import { agregarMonAsync } from '../redux/actions/actionAddMo';
+import { ToastContainer, toast } from 'react-toastify';
 
 const Mentores = () => {
    const dispatch = useDispatch();
@@ -21,14 +22,14 @@ const Mentores = () => {
 
    const handleSubmit = (e) => {
       e.preventDefault()
-      console.log(pro)
+      toast.success("Monitor agregado con exito!");
       dispatch(agregarMonAsync(pro))
    }
 
    return (
       <div className='container'>
          <h1>Registrar Monitores</h1>
-
+         <ToastContainer />
          <Form onSubmit={handleSubmit}>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">

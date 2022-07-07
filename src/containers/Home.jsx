@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { deleteMonitor, deleteMonitorias, listarMonitor, ListarMonitorias } from '../redux/actions/actionData';
 import { ContHome, Monitor } from '../styles/style';
 import { AiFillDelete } from 'react-icons/ai';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Home = () => {
@@ -18,19 +19,19 @@ const Home = () => {
    }, [monitor, monitorias])
 
    const handleDeleteMonitor = (cc) => {
-      alert('vamos a eliminar', cc)
+      toast.error("Monitor eliminado")
       dispatch(deleteMonitor(cc))
    }
 
    const handleDeleteMonitorias = (materia) => {
-      alert('vamos a eliminar', materia)
+      toast.error("Monitoria eliminada")
       dispatch(deleteMonitorias(materia))
    }
 
    return (
       <>
          <h1 className='text-center'>Monitorias de la U</h1>
-
+         <ToastContainer />
          <ContHome className='container'>
             <div>
                <h3>Monitores</h3>
